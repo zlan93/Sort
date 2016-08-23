@@ -1,0 +1,29 @@
+﻿<html>
+<head>
+<script type="text/javascript">
+//插入排序，升序
+//将后面的值插入到前面已排序好的有序表中
+function InsertSort(){
+  var a = [4,25,8,12,7];
+  document.write("<p>"+a+"</p>");
+  var i,j;
+  for(i=0;i<a.length;i++){
+	var key =a[i+1];
+    for(j=i+1;j>0;j--){
+	   if(key<a[j-1]){
+	      var t = a[j];
+		  a[j] = a[j-1];
+		  a[j-1] = t;
+	   }
+	}
+  }document.write("<p>sort:"+a+"</p>");
+
+}
+</script>
+</head>
+<body>
+<h3>插入排序</h3>
+<button onclick="InsertSort()">插入排序</button>
+</body>
+</html>
+

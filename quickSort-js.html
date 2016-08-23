@@ -1,0 +1,46 @@
+﻿<html>
+<head>
+<script type="text/javascript">
+//快速排序 ，升序
+function quickSort(){
+   var arr = [13,2,25,9,6,7];
+document.write(arr);
+ sort(arr,0,5)   ;
+ document.write("<p>quick sort："+arr+"</p>");
+   
+}
+function sort(a,first,last){
+  if(first>=last){
+     return;
+  }
+  var i=first, j=last;
+  var key = a[first];
+  while(i<j){
+	   for(;j>first;j--){
+		   if(a[j]<key){
+			   var t=a[i];
+			   a[i]=a[j];
+			   a[j]=t;
+			   break;
+		   }
+	   }
+	   for(;i<j;i++){
+		   if(a[i]>key){
+			   var t=a[i];
+			   a[i]=a[j];
+			   a[j]=t;
+			   break;
+		   }
+	   }
+	}
+	   //根据key的位置分成前后两段（前面都比key小，后面都比key大），分别排序
+	   sort(a,first,i-1);
+	   sort(a,i+1,last);
+}
+</script>
+</head>
+<body>
+quick-sort
+<input type="button" onclick="quickSort()" value="quick-sort" />
+</body>
+</html>

@@ -1,0 +1,30 @@
+﻿<html>
+<head>
+<script type="text/javascript">
+//选择排序--简单选择排序（Simple Selection Sort）,升序
+function sort(){
+   var a=[3,6,11,23,2,12,5,9];
+   document.write("<p>"+a+"</p>");
+   var i,j;
+   for(i=0;i<a.length;i++){
+      var key=a[i];
+	  var index=i;
+	  for(j=i+1;j<a.length;j++){
+	    if(a[j]<key){
+		    key=a[j];
+			index=j;
+		}
+	  }
+	  if(a[i]!=key){
+	    a[index]=a[i];
+		a[i]=key;
+	  }
+   }
+   document.write("<p>sort: "+a+"</p>");
+}
+</script>
+</head>
+<body>
+<button onclick="sort()">选择排序</button>
+</body>
+</html>
